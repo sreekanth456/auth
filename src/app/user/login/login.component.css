@@ -1,0 +1,21 @@
+
+
+.container{
+
+    margin:auto;
+    position:relative;
+
+}
+
+.container .forms{
+
+    position:absolute;
+    top:50px;
+    left:400px;
+  /*   border:1px dotted red;
+    box-sizing: border-box; */
+    padding:50px;
+
+
+
+}

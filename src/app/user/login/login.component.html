@@ -1,0 +1,45 @@
+
+
+<div class="container">
+
+    <form [formGroup]="loginDetails" class="forms" (ngSubmit)="onSubmit()">
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput [class.is-invalid]="loginDetails.get('email').invalid && loginDetails.get('email').touched" formControlName="email" placeholder="Enter Email Id " >
+            
+                <mat-error *ngIf="loginDetails.get('email').invalid && loginDetails.get('email').touched">
+
+                <span *ngIf="loginDetails.get('email').errors ?.required">Email id Must </span>
+                <span *ngIf="loginDetails.get('email').errors ?.email">Valid Email Id</span>
+
+
+            </mat-error>
+            
+            </mat-form-field>
+        </div>
+
+
+        <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [class.is-invalid]="loginDetails.get('password').invalid && loginDetails.get('password').touched" formControlName="password" placeholder="Enter password " >
+                
+                    <mat-error *ngIf="loginDetails.get('password').invalid && loginDetails.get('password').touched">
+    
+                    <span *ngIf="loginDetails.get('password').errors ?.required">Password id Must </span>
+                    <span *ngIf="loginDetails.get('password').errors ?.minlength">Password Is Minimum Five Digits</span>
+    
+    
+                </mat-error>
+                
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button [disabled]="!loginDetails.valid" color="primary">Submit</button>
+
+    </form>
+
+
+</div>

@@ -1,0 +1,10 @@
+<p>info works!</p>
+
+
+<ul *ngFor="let data of userInfo" (click)='onSelect(data)' >
+    <li><button>{{data.id}}</button></li>
+    <li>{{data.name}}</li>
+    <li>{{data.age}}</li>
+    <li>{{data.gender}}</li>
+
+</ul>
